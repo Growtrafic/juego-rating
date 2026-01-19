@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { ArrowLeft, Compass, Home, Lifebuoy } from "lucide-react"
+import { ArrowLeft, Compass, Home, LifeBuoy } from "lucide-react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
@@ -40,7 +40,7 @@ export default function NotFound() {
               </Button>
               <Button asChild variant="ghost" size="lg" className="gap-2">
                 <Link href="/contacto">
-                  <Lifebuoy className="w-5 h-5" /> Нужна помощь?
+                  <LifeBuoy className="w-5 h-5" /> Нужна помощь?
                 </Link>
               </Button>
             </div>
@@ -77,7 +77,7 @@ export default function NotFound() {
               <Card className="border-primary/30 bg-card/70 backdrop-blur">
                 <CardContent className="p-6 space-y-3">
                   <div className="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-primary/10 text-primary">
-                    <Lifebuoy className="w-5 h-5" />
+                    <LifeBuoy className="w-5 h-5" />
                   </div>
                   <h3 className="text-lg font-semibold">Свяжитесь с нами</h3>
                   <p className="text-sm text-muted-foreground">Есть вопросы? Напишите в раздел «Контакты» — мы подскажем.</p>
