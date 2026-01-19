@@ -14,6 +14,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { getVisibleCasinos, bonuses } from "@/lib/casinos-data"
+import { addUtmParams } from "@/lib/utils"
 
 const casinos = getVisibleCasinos(); // Declare the casinos variable
 
@@ -109,7 +110,7 @@ export default function BonosPage() {
                       </div>
 
                       <a
-                        href={casino.affiliateUrl || `/casino/${casino.slug}`}
+                        href={casino.affiliateUrl ? addUtmParams(casino.affiliateUrl) : `/casino/${casino.slug}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="casino-cta"

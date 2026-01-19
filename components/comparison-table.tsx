@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { AnimatedSection } from "@/components/ui/animated-section";
 import { getVisibleCasinos } from "@/lib/casinos-data";
+import { addUtmParams } from "@/lib/utils";
 
 export function ComparisonTable() {
   const topCasinos = getVisibleCasinos().slice(0, 5);
@@ -97,7 +98,7 @@ export function ComparisonTable() {
                       <td className="p-4 text-center">
                         <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground" asChild>
                           <a 
-                            href={casino.affiliateUrl || `/casino/${casino.slug}`} 
+                            href={casino.affiliateUrl ? addUtmParams(casino.affiliateUrl) : `/casino/${casino.slug}`} 
                             target="_blank" 
                             rel="noopener noreferrer nofollow"
                             className="casino-cta"
@@ -175,7 +176,7 @@ export function ComparisonTable() {
                   </div>
                   <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground mt-2" asChild>
                     <a 
-                      href={casino.affiliateUrl || `/casino/${casino.slug}`} 
+                      href={casino.affiliateUrl ? addUtmParams(casino.affiliateUrl) : `/casino/${casino.slug}`} 
                       target="_blank" 
                       rel="noopener noreferrer nofollow"
                       className="casino-cta"

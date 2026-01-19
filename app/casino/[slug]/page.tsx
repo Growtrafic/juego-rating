@@ -15,6 +15,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { ResponsibleGaming } from "@/components/responsible-gaming"
 import { casinos, getCasinoBySlug } from "@/lib/casinos-data"
+import { addUtmParams } from "@/lib/utils"
 
 interface PageProps {
   params: Promise<{ slug: string }>
@@ -320,7 +321,7 @@ export default async function CasinoPage({ params }: PageProps) {
                     </div>
                     <CardContent className="p-4 space-y-4">
                       <a
-                        href={casino.affiliateUrl || `/casino/${casino.slug}`}
+                        href={casino.affiliateUrl ? addUtmParams(casino.affiliateUrl) : `/casino/${casino.slug}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="block casino-cta"
@@ -405,7 +406,7 @@ export default async function CasinoPage({ params }: PageProps) {
               <div className="text-sm font-bold text-primary truncate">{casino.bonusAmount}</div>
             </div>
             <a
-              href={casino.affiliateUrl || `/casino/${casino.slug}`}
+              href={casino.affiliateUrl ? addUtmParams(casino.affiliateUrl) : `/casino/${casino.slug}`}
               target="_blank"
               rel="noopener noreferrer"
               className="shrink-0 casino-cta"

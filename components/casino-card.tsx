@@ -6,7 +6,7 @@ import { Star, Clock, Shield, ExternalLink, Check, Gamepad2 } from "lucide-react
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { cn } from "@/lib/utils"
+import { cn, addUtmParams } from "@/lib/utils"
 
 interface CasinoCardProps {
   rank: number
@@ -154,7 +154,7 @@ export function CasinoCard({
           {/* CTA */}
           <div className="flex flex-col gap-2">
             <a 
-              href={affiliateUrl || `/casino/${slug}`}
+              href={affiliateUrl ? addUtmParams(affiliateUrl) : `/casino/${slug}`}
               target="_blank"
               rel="noopener noreferrer"
               className="casino-cta"

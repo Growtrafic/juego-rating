@@ -241,7 +241,7 @@ export const casinos: Casino[] = [
     name: "MelBet",
     slug: "melbet",
     logo: "/images/melbet.jpg",
-    affiliateUrl: "https://clearpointservices.space/C4WhLg?utm_campaign=0000",
+    affiliateUrl: "https://clearpointservices.space/C4WhLg",
     showInRankings: false,
     rating: 9.0,
     games: "3,000+",
