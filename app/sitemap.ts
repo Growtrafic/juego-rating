@@ -1,10 +1,11 @@
-import { casinos } from "@/lib/casinos-data";
+import { getVisibleCasinos } from "@/lib/casinos-data";
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://juegorating.site";
 
-  const casinoPages = casinos.map((casino) => ({
+  // Используем только видимые казино (showInRankings !== false)
+  const casinoPages = getVisibleCasinos().map((casino) => ({
     url: `${baseUrl}/casino/${casino.slug}`,
     lastModified: new Date(),
     changeFrequency: "weekly" as const,
